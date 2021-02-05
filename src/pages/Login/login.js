@@ -1,25 +1,32 @@
 import React, { useState } from 'react';
+import api from '../../services/api';
 import './login.css'
 
 export default function Login() {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
 
-    function handleSubmit(event) {
+    async function handleSubmit(event) {
         event.preventDefault();
 
-        console.log(email)
-        console.log(password)
+        const response = await api.post('auth/login', 
+        {
+            "email": "owner@company3.com",
+            "password": "$ecret123"
+        })
+        const company_id = response.data['data']['user']['companies'][0]['id'];
+        localStorage.setItem('companie_id', company_id);
+
     }
 
 
     return (
         <div className="container">
-            
+
             <div className="login__container">
-            <h1 className="login-title">Easy Real Estate</h1>
+                <h1 className="login-title">Easy Real Estate</h1>
                 <div className="login__form">
-                    
+
                     <form onSubmit={handleSubmit}>
                         <label htmlFor="email">E-MAIL</label>
                         <input
