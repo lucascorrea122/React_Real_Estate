@@ -2,21 +2,22 @@ import React, { useState } from 'react';
 import api from '../../services/api';
 import './login.css'
 
-export default function Login() {
+export default function Login({history}) {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
 
     async function handleSubmit(event) {
         event.preventDefault();
-
         const response = await api.post('auth/login', 
         {
             "email": "owner@company3.com",
             "password": "$ecret123"
-        })
+            });
         const company_id = response.data['data']['user']['companies'][0]['id'];
+        const token = response.data['data']['token'];
         localStorage.setItem('companie_id', company_id);
-
+        localStorage.setItem('token_user', token);
+        history.push('/property');
     }
 
 
