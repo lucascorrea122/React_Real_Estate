@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
+import React, { } from 'react';
 import api from '../services/api';
 import "../App.css"
 
 import { useHistory } from "react-router-dom";
 
-export default function Header({ }) {
+export default function Header() {
     const history = useHistory();
     async function handleSubmit(event) {
         event.preventDefault();

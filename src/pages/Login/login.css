@@ -1,5 +1,4 @@
-
-.login__container{
+.login__container {
     text-align: center;
     margin: 80px auto 0;
     max-width: 450px;
@@ -8,28 +7,28 @@
     flex-direction: column;
 }
 
-.login__form{
+.login__form {
     width: 100%;
-    background-color: rgba(211, 211, 211, .6) ;
+    background-color: rgba(211, 211, 211, 0.6);
     margin-top: 50px;
     border-radius: 4px;
     padding: 30px;
 }
 
-.login__form form{
+.login__form form {
     display: flex;
     flex-direction: column;
     margin-top: 20px;
 }
 
-.login__form form label{
+.login__form form label {
     font-size: 14px;
     color: #444;
     font-weight: bold;
     margin-bottom: 8px;
 }
 
-.login__form form input{
+.login__form form input {
     margin-bottom: 20px;
     border: 1px solid #ddd;
     border-radius: 4px;
@@ -38,7 +37,7 @@
     font-size: 16px;
 }
 
-.login__form button.btn{
+.login__form button.btn {
     border: 0;
     border-radius: 10px;
     width: 100%;
@@ -46,7 +45,47 @@
     padding: 0 20px;
     font-size: 16px;
     font-weight: bold;
-    background:#363636;
+    background: #363636;
     color: #fff;
     cursor: pointer;
+}
+
+.span {
+    color: #fff;
+}
+
+@media screen and (max-width: 320px) {
+    .login__form {
+        width: 100%;
+        background-color: rgba(2, 211, 211, 0.1);
+        margin-top: 50px;
+        border-radius: 4px;
+        padding: 30px;
+    }
+
+    .login__form form label {
+        font-size: 14px;
+        color: #fff;
+        font-weight: bold;
+        margin-bottom: 8px;
+    }
+    
+}
+
+@media screen and (max-width: 480px) {
+    .login__form {
+        width: 100%;
+        background-color: rgba(2, 211, 211, 0.1);
+        margin-top: 50px;
+        border-radius: 4px;
+        padding: 30px;
+    }
+
+    .login__form form label {
+        font-size: 14px;
+        color: #fff;
+        font-weight: bold;
+        margin-bottom: 8px;
+    }
+    
 }
